@@ -40,12 +40,38 @@ class _MainState extends State<Main> {
               backgroundColor: Colors.transparent.withOpacity(1),
             ),
             drawer: Drawer(
-              child: Center(
-                child: Text("커스텀 기능 추후 추가 예정",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+              child: Container(
+                color: Colors.grey[900],
+                // Column 추가
+                child: Column(
+                  children: [
+                  // Drawer 헤더 추가
+                  DrawerHeader(
+                  // 헤더 영역의 중앙에 '오늘 우주는' 이라는 텍스트 추가
+                  child: Center(
+                    child: Text(
+                    '자이 카운터',
+                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    ),
                   ),
+                  // 헤더 영역 배경을 검정색 박스로 꾸밈
+                  decoration: BoxDecoration(color: Colors.black),
+                  ),
+                  // ListTile 을 추가 한다
+                  ListTile(
+                  // 가장 앞에 (leading) 별 모양의 아이콘을 추가한다.
+                    leading: Icon(Icons.settings, color: Colors.white),
+                    // 아이콘 뒤에 '앱 평가하기' 라는 텍스트를 추가한다.
+                    title: Text(
+                      '설정',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                    // 클릭시 플레이스토어 실행 필요. (추후 추가 예정)
+                    onTap: () {
+
+                    },
+                  ),
+                  ],
                 ),
               ),
             ),
